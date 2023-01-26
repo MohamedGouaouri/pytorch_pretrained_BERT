@@ -894,7 +894,7 @@ class BertForSequenceClassification(PreTrainedBertModel):
             loss = loss_fct(logits.view(-1, self.num_labels), labels.view(-1))
             return loss
         else:
-            return logits
+            return logits, pooled_output
 
 
 class BertForMultipleChoice(PreTrainedBertModel):
